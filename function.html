@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1</title>
+	<script type="text/javascript">
+	window.onload = function(){
+		function order(a,b){
+			alert(arguments.length);
+		}
+		order(1,3);
+		// 作为值得函数
+		function sque(x){
+			return x*x;
+		}
+		var s = sque;
+		alert(s(4));
+		// 将函数赋值给对象的属性
+		var o = {
+			su:function(w){
+				return w+w;
+			}
+		}
+
+		// 直接赋值给数组
+		a = [function(a){return a+a;},10];
+		a[0](a[1]);
+
+		// 将函数作为值
+		function add(a,b){return a+b;}
+		function subtract(a,b){return a-b;}
+		function operat(operator,one,two){
+			return operator(one,two);
+		}
+		var a = operat(add,operat(add,10,50),operat(subtract,20,10));
+			alert(a);
+		// 自定义函数属性
+		myfun.name = 0;
+		function myfun(){
+			return myfun.name++;
+		}
+
+		// 作为命名空间的函数
+		
+	}
+
+	</script>
+</head>
+
+<body>
+
+</body>
+</html>
